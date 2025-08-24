@@ -44,14 +44,18 @@ const Hero = () => {
             >
               Software Engineer & Full-Stack Developer
             </motion.h1>
-            
+
             <motion.p
               className="hero-subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              I'm Afolabi Praise Ifekristi, a passionate Computer Science student with strong proficiency in modern web and mobile development technologies. Seeking a frontend or full-stack developer role to apply my skills in JavaScript, React, React Native, and Spring Boot while gaining industry experience.
+              I'm Afolabi Praise Ifekristi, a passionate Computer Science
+              student with strong proficiency in modern web and mobile
+              development technologies. Seeking a frontend or full-stack
+              developer role to apply my skills in JavaScript, React, React
+              Native, and Spring Boot while gaining industry experience.
             </motion.p>
 
             <motion.div
@@ -61,15 +65,20 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <a href="#projects" className="cta-primary">View My Work</a>
-              <a 
-                href="/resume/AFOLABI PRAISE IFEKRISTI.pdf" 
+              <a
+                href="https://www.canva.com/design/DAGvyDngZng/WBVONPclU6zLDkeHtCorAQ/view?utm_content=DAGvyDngZng&utm_campaign=share_your_design&utm_medium=link2&utm_source=shareyourdesignpanel"
+                className="cta-primary"
+              >
+                View My Resume
+              </a>
+              <a
+                href="/resume/AFOLABI PRAISE IFEKRISTI.pdf"
                 className="cta-secondary"
                 download="AFOLABI PRAISE IFEKRISTI.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaDownload style={{ marginRight: '8px' }} />
+                <FaDownload style={{ marginRight: "8px" }} />
                 Download Resume
               </a>
             </motion.div>
@@ -106,21 +115,24 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="profile-photo-container">
-              <img 
-                src="/images/mainprofile.jpg" 
-                alt="Afolabi Praise Ifekristi" 
+              <img
+                src="/images/mainprofile.jpg"
+                alt="Afolabi Praise Ifekristi"
                 className="profile-photo"
                 onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
+                  e.target.style.display = "none";
+                  e.target.nextSibling.style.display = "flex";
                 }}
               />
-                             <div className="profile-photo-placeholder" style={{ display: 'none' }}>
-                 <div className="photo-text">Add Your Photo Here</div>
-                 <div className="photo-instructions">
-                   Replace this placeholder with your actual photo
-                 </div>
-               </div>
+              <div
+                className="profile-photo-placeholder"
+                style={{ display: "none" }}
+              >
+                <div className="photo-text">Add Your Photo Here</div>
+                <div className="photo-instructions">
+                  Replace this placeholder with your actual photo
+                </div>
+              </div>
               <div className="photo-border"></div>
             </div>
           </motion.div>

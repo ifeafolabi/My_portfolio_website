@@ -6,6 +6,7 @@ import './Projects.css';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
@@ -106,6 +107,12 @@ const Projects = () => {
     return iconMap[tech] || FaReact;
   };
 
+  const handleProjectClick = (project) => {
+    if (project.live && project.live !== '#') {
+      window.location.href = project.live;
+    }
+  };
+
   return (
     <section id="projects" className="projects">
       <div className="projects-container">
@@ -142,7 +149,7 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              className={`project-card ${project.customClass || ''}`}
+              className={`project-card ${project.customClass || ''} ${project.live && project.live !== '#' ? 'clickable' : ''}`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -164,7 +171,17 @@ const Projects = () => {
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
                       <FaGithub />
                     </a>
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <a 
+                      href={project.live} 
+                      className="project-link"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (project.live && project.live !== '#') {
+                          e.preventDefault();
+                          window.location.href = project.live;
+                        }
+                      }}
+                    >
                       <FaExternalLinkAlt />
                     </a>
                   </div>
